@@ -6,11 +6,10 @@ for _ in range(m):
     a, b = map(int, sys.stdin.readline().split())
     edges[a].append(b)
 
-INF = 9999999999999
 
 def solution(start):
     global k
-    visited = [INF] * (n+1)
+    visited = [-1] * (n+1)
     visited[start] = 0
 
     queue = []
@@ -25,7 +24,7 @@ def solution(start):
         while size > 0:
             cur = queue.pop(0)
             for next in edges[cur]:
-                if visited[next] == INF:
+                if visited[next] == -1:
                     visited[next] = cnt
                     queue.append(next)
             size -= 1
