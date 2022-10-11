@@ -1,3 +1,5 @@
+# https://dapsu-startup.tistory.com/entry/백준-장난감-조립-2637-파이썬Python
+
 import sys
 from collections import defaultdict, deque
 
