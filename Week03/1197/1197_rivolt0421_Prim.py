@@ -41,7 +41,7 @@ for _ in range(n-1):
     while distance:
         if (e := heappop(distance))[1] not in Y:    # 아래에서 이미 Y에 들어간 v를 향한 엣지들은 빼주긴 하지만,
                                                     # 이전 distance정보들이 heap에 계속 남아있기 때문에
-                                                    # Y를 향하지 않는 엣지가 나올 때 까지 pop 한다.
+                                                    # Y집합을 향하지 않는 엣지가 나올 때 까지 pop 한다.
                                                     # 배열을 쓴다면 배열은 배열 값 자체를 갱신해주기 때문에 이전 distance정보가 남을 수 없을 것.
             Y.add(e[1])  #  vertex
             cost += e[0] #  weight
