@@ -12,7 +12,6 @@ for _ in range(m):
 start, end = map(int, input().split())
 
 distance = [float('inf')] * (n+1)
-
 distance[start] = 0
 distance_heap = []     #(dist, v )
 heappush(distance_heap, (0, start))
@@ -46,3 +45,5 @@ while distance_heap:
             heappush(distance_heap, (d, w))
             
 print(distance[end])
+
+# Prim 과의 차이점은 exercise/Prim_vs_Dijkstra.jpg 참고.
