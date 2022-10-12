@@ -60,7 +60,7 @@ def dfs(visited: list, distance: list, cur: Edge):
             count += 1
     
 
-def solution(start, end, root):
+def solution(end, root):
     global n, count
     
     distance = init_distance(root)
@@ -74,4 +74,4 @@ def solution(start, end, root):
     print(count)
 
 
-solution(start, end, root)
+solution(end, root)
