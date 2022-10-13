@@ -10,7 +10,7 @@ fibo_num[2] = 1
 def fibonacci(x):
     if fibo_num[x] != 0:
         return fibo_num[x]
-    for i in range(3, x+1):
+    for i in range(x, 2, -1):
         fibo_num[i] = fibonacci(i-1) + fibonacci(i-2)
     return fibo_num[x]
 
