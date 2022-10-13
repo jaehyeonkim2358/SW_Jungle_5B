@@ -9,7 +9,6 @@ dp=[0]*91
 dp[1]=1
 
 def solve(i):
-    global cnt
     if N<=1:
         print(dp[N])
     elif dp[N]!=0:
