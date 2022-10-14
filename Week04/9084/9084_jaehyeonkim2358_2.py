@@ -8,22 +8,24 @@
 
 import sys
 
-input = sys.stdin.readline
-print = sys.stdout.write
+def main():
+    input = sys.stdin.readline
+    print = sys.stdout.write
 
-tc = int(input().rstrip())
+    tc = int(input().rstrip())
+    while tc > 0:
+        n = int(input().rstrip())
+        tmp = list(map(int, input().split()))
+        m = int(input().rstrip())
 
-while tc > 0:
-    n = int(input().rstrip())
-    tmp = list(map(int, input().split()))
-    m = int(input().rstrip())
+        dp = [0] * (m+1)
+        dp[0] = 1
 
-    dp = [0] * (m+1)
-    dp[0] = 1
+        for t in tmp:
+            for j in range(t, m+1):
+                dp[j] += dp[j-t]
 
-    for t in tmp:
-        for j in range(t, m+1):
-            dp[j] += dp[j-t]
+        print(f"{dp[m]}\n")
+        tc -= 1
 
-    print(f"{dp[m]}\n")
-    tc -= 1
+main()
