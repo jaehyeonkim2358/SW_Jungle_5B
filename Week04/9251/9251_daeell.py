@@ -13,6 +13,7 @@ def lcs():
     for i in range(1, len(subs_one)+1):
         for j in range(1, len(subs_two)+1):
             # 2중 반복문을 통해 일치여부를 쭉 확인한다.
+            
             if subs_one[i-1] == subs_two[j-1]:
                 # 마지막으로 들어온 문자가 일치한다면?
                 # 인덱스도 -1을 한 이유는 위에 matrix에서의 비교하기 위해 (0) 배열을 비워놓기 위해 1씩 추가해서 길이가 7인데

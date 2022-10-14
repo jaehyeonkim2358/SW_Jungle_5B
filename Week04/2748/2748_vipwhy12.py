@@ -21,16 +21,7 @@ for i in range(n + 1):
 
     fibonacci.append(num)
     
+    
+    
+    
 print(fibonacci[-1])
-
-#def pibonach(num):
-#    if num == 0: 
-#        return 0
-    
-#    if num < 3:
-#        return 1
-    
-#    return pibonach(num - 1) + pibonach(num - 2)
-
-#print(pibonach(int(sys.stdin.readline())))
-

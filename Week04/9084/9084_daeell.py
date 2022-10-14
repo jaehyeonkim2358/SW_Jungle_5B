@@ -10,8 +10,10 @@ for _ in range(T):
     coins = list(map(int, input().split()))
     price = int(input())
     dp = {i: 0 for i in range(price+1)}
+    
     dp[0] = 1
     # 어떤 동전을 쓰던 0원을 만들 수 있는 가짓수는 1개이다. 0개 쓰면 0원 되잖아>?
+    
     for coin in coins:
         # 동전 별로 개수를 누적시키기 위해.
         for i in range(price+1):
