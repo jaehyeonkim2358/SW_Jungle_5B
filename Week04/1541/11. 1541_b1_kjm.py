@@ -10,6 +10,18 @@
 # 무엇보다 이게 왜 그리디인지 모르겟음!
 
 
-
+# 복기
 import sys
-input=sys.stdin.readline
+input = sys.stdin.readline
+
+string = input().split('-')
+print(string) #['55', '50+40\n']
+
+sum = 0
+for i in string[0].split('+'):
+  sum = sum + int(i)
+
+for i in string[1:]:
+  for j in i.split("+"):
+    sum = sum - int(j)
+print(sum)
