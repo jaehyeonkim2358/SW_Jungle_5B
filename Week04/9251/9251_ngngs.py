@@ -16,9 +16,9 @@ dp = [[0] * (val_length2 + 1) for _ in range(val_length+1)] # 2차 함수 만들
 
 for i in range(1, val_length+1) :
     for j in range(1, val_length2+1) :
-        if insert_val[i-1] == insert_val2[j-1] :
+        if insert_val[i-1] == insert_val2[j-1] : # 문자가 같다면, 대각선 왼쪽 위 값 기준 + 1
             dp[i][j] = dp[i-1][j-1] + 1
         else :
-            dp[i][j] = max(dp[i][j-1], dp[i-1][j]) # 왼쪽 대각선 위 혹은 바로 위 값 중 더 큰 값
+            dp[i][j] = max(dp[i][j-1], dp[i-1][j]) # 문자가 다르다면, 왼쪽 혹은 바로 위 값 중 더 큰 값
 
 print(dp[val_length][val_length2])
