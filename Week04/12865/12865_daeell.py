@@ -1,3 +1,4 @@
+# 42104KB 4248ms
 import sys
 sys.stdin = open('input.txt', 'r')
 input = sys.stdin.readline
