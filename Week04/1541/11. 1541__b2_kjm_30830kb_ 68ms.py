@@ -28,3 +28,30 @@ answer = A[0] #처음 0번째는 무조건 더하기만 되니까 미리 더해�
 for i in range(1, len(A)):
   answer = answer - A[i]
 print(answer)
+
+
+
+# 재현이 코드리뷰
+# import sys
+
+# A = sys.stdin.readline().rstrip().split('-')
+
+# nums = []
+# for a in A:
+#     nums.append(sum(map(int, a.split('+'))))  
+#이 부분이 진짜 웃겼음. 
+#치우처럼 더하기들 먼저 싹 더해놓는 방식이었는데 ex) ([50+50], [40+10]이면 [100], [50] 먼저함.)
+#한줄로 구현함.sum(map(int, a.split('+')) 50+50이면 split하면 [50, 50]이지? 이걸 그냥 sum으로 더함.
+#끝
+"""
+치우 코드의 이 부분은 사실 없어도 되는 반복문이었던것.
+    tmp=A[i].split('+')
+    for itr_tmp in tmp: 
+      sum = sum + int(itr_tmp)
+      A[i] = sum
+"""
+# result = nums[0]
+# for i in range(1, len(nums)):
+#     result -= nums[i]
+
+# sys.stdout.write(f'{result}')

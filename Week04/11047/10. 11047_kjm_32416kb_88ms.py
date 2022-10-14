@@ -20,3 +20,21 @@ for coin in deq:
             K = K - coin*tmp_value
             count= count + tmp_value
 print(count)
+
+
+# 재현이 코드 리뷰
+# import sys
+# N, K = map(int, sys.stdin.readline().split())
+# money = []
+# for _ in range(N):
+#     tmp = int(sys.stdin.readline().rstrip())
+#     if tmp <= K:   # 이 부분이 좋았음. 애당초 K보다 큰 동전은 배열에 넣을 필요가 없지. K보다 작은것만 배열에 담음 
+#         money.append(tmp)
+
+
+# count = 0
+# for i in range(len(money)-1, -1, -1):
+#     count += K//money[i]
+#     K -= (K//money[i])*money[i]
+
+# sys.stdout.write(f'{count}')
