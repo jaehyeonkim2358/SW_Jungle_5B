@@ -15,7 +15,7 @@ import sys
 input = sys.stdin.readline
 
 string = input().split('-')
-print(string) #['55', '50+40\n']
+# print(string) #['55', '50+40\n']
 
 sum = 0
 for i in string[0].split('+'):
@@ -25,3 +25,5 @@ for i in string[1:]:
   for j in i.split("+"):
     sum = sum - int(j)
 print(sum)
+
+
