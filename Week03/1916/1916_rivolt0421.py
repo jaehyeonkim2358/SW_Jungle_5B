@@ -8,7 +8,7 @@ n = int(input()) ; m = int(input())
 adj = defaultdict(lambda: defaultdict(lambda: float('inf')))
 for _ in range(m):
     u, w, d= map(int, sys.stdin.readline().split())
-    adj[u][w] = min(adj[u][w],d)
+    adj[u][w] = min(adj[u][w],d) # lesson 그래프에서 defaultdict > defaultdict > 숫자로 사용할 때 중복된 간선이 가중치만 다르게 들어온다면 가장 마지막에 들어온 가중치가 남게된다.
 start, end = map(int, input().split())
 
 distance = [float('inf')] * (n+1)
