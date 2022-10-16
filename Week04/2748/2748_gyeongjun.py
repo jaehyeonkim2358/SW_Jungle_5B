@@ -1,37 +1,10 @@
-from collections import deque
+import sys
+input = sys.stdin.readline
 
-dx=[-1,0,1,0]
-dy=[0,1,0,-1]
+a = int(input())
 
-n,m=map(int,input().split())
-board=[list(map(int,input().split())) for _ in range(n)]
-visit = [[False]*m for _ in range(n)]
-Q=deque()
-cnt=1
-max_width=0
-for i in range(n):
-    for j in range(m):
-        if board[i][j]==1 and visit[i][j]==False:
-            visit[i][j]=True
-            Q.append((i,j))
-            cnt+=1
-            width=1
-            while Q:
-                tmp = Q.popleft()
-                for i in range(4):
-                   yy = tmp[0]+dy[i]
-                   xx = tmp[1]+dx[i]
-                   if 0<=yy<n and 0<=xx<m and board[yy][xx]==1 and visit[yy][xx]==False:
-                        visit[yy][xx]=True
-                        Q.append((yy,xx))
-                        width+=1
-            if max_width<=width:
-                max_width = width
-
-
-if cnt!=0:
-    print(0)
-    print(max_width)
-else:
-    print(cnt)
-    print(0)
+fibo_arr = [0,1]
+#피사노 주기: 피보나치 수를 K로 나눈 나머지는 항상 주기를 갖게된다
+for i in range(2,a+1):
+    fibo_arr.append(fibo_arr[i-1]+fibo_arr[i-2])
+print(fibo_arr[a])
