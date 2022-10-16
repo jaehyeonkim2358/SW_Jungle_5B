@@ -25,13 +25,3 @@ for i in range(T):
             if i >= coin:
                 dp[i] += dp[i-coin]
     print(dp[M])
-
-    # 여기서 만약에 가치의 합이 되도록 하는 동전의 최소의 갯수를 구하라 ! 이렇게 되면 ???
-    # for i in range(M+1):
-    #     for coin in coins:
-    #         if i < coin: continue
-    #         dp[i] = min(dp[i], dp[i-coin]+1)
-            
-    # print(dp[M])
-
-

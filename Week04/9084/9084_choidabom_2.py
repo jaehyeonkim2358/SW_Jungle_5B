@@ -1,6 +1,5 @@
 # 9084: 동전 
 # 핵심은 동전을 통제하는거다.
-
 import sys
 sys.stdin = open("9084/input.txt","r")
 input = sys.stdin.readline
