@@ -2,13 +2,11 @@ import sys
 sys.stdin = open('Week04/1904/1904_lwh.txt', 'r')
 input = sys.stdin.readline
 
-# tile = [0] * 1000001
-
 N = int(input())
 # tile[1] = 1
 # tile[2] = 2
 tile = [2, 1]
-
+# 재현 style ref
 def solve(n):
     
     for m in range(3, n+1):
