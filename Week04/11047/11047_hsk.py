@@ -7,7 +7,7 @@ n, k = map(int, input().split())
 
 coin_list = []
 for _ in range(n):
-    coin_list.append(int(input()))
+    coin_list.append(int(input())) 
 
 count1 = 0
 for i in range(n-1, -1, -1):
