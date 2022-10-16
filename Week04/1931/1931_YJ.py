@@ -6,7 +6,7 @@ N = int(input())
 meetings= []
 for i in range(N):
     start, end = map(int, input().split())
-    meetings.append([end,start]) # lambda 쓰지 않고 하려고 그냥 end를 먼저 넣었음 
+    meetings.append((end,start)) # lambda 쓰지 않고 하려고 그냥 end를 먼저 넣었음 
 
 meetings.sort()
 finishing_time= 0 
