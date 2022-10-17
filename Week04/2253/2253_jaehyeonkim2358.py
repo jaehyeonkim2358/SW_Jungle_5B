@@ -13,7 +13,7 @@ dp[1][0] = 0
 for i in range(2, n+1):
     if i in trap:
         continue
-    for v in range(1, int(2*(n**.5))+1):
+    for v in range(1, int(2*(i**.5))+1):
         dp[i][v] = min(dp[i-v][v-1], dp[i-v][v], dp[i-v][v+1]) + 1
 
 ans = min(dp[n])
