@@ -1,11 +1,11 @@
 import sys
 input = sys.stdin.readline
 n = int(input())
-a = [0] + list(map(int, input().split()))
-num = a[0]
-cnt = 0
-for i in range(1, n+1):
-    if(a[i] > num):
-        cnt += 1
-        num = a[i]
-print(cnt)
+a = list(map(int, input().split()))
+dp = [1] * n
+for i in range(1, n):
+    for j in range(i):
+        if(a[i] > a[j]):
+            dp[i] = max(dp[i], dp[j]+1)
+
+print(max(dp))
