@@ -12,7 +12,7 @@ for i in range(n):
     graph.append(list(map(int, input().split())))
 # print(graph) [[0, 10, 15, 20], [5, 0, 9, 10], [6, 13, 0, 12], [8, 8, 9, 0]]
 
-def dfs(x, visited):
+def dfs(x, visited): #여기서 x는 출발 도시가 아니라 현재도시라는 점을 기억해야해!! 출발도시는 항상 0번 도시로 고정해놓은 상태야.
     if visited == (1<<2)-1: #2진법으로 15이면 111,111,111,111,111 이다. 즉 1이 도시를 방문한거고 0이 도시를 방문 안 한거라 생각하면 15는 15개의 도시(시작도시 1을 뺀)를 모두 방문한 것을 표현한 것이다.
         if graph[x][0]: #출발점으로 되돌아가는 경로가 있을 때
             return graph[x][0] #그 경로의 비용을 리턴해라??
@@ -28,7 +28,7 @@ def dfs(x, visited):
         if visited & (1<<i): #이미 방문한 도시라면 skip
             continue
 
-        dp[x][visited] = min(dp[x][visited]), dfs(i, visited | (1<<i)+graph[x][i])
+        dp[x][visited] = min(dp[x][visited]), dfs(i, visited | (1<<i)+graph[x][i]) #visited | (1<<i) 이게 비트마스킹을 최신화 시키고있네? 
     return dp[x][visited]
 
 print(dfs(0,1))
