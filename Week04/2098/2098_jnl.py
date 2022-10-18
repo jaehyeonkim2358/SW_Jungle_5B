@@ -1,35 +1,36 @@
-# 외판원 순회 # 남 코드 그대~~~로 복사
+# 외판원 순회
 import sys
 input = sys.stdin.readline
-n = int(input())
+print = sys.stdout.write
+sys.setrecursionlimit(10**8)
 
-INF = sys.maxsize
-dp = [[INF] * (1 << n) for _ in range(n)]
-
-
-def dfs(x, visited):
-    if visited == (1 << n) - 1:     # 모든 도시를 방문했다면
-        if graph[x][0]:             # 출발점으로 가는 경로가 있을 때
-            return graph[x][0]
-        else:                       # 출발점으로 가는 경로가 없을 때
-            return INF
-
-    if dp[x][visited] != INF:       # 이미 최소비용이 계산되어 있다면
-        return dp[x][visited]
-
-    for i in range(1, n):           # 모든 도시를 탐방
-        if not graph[x][i]:         # 가는 경로가 없다면 skip
-            continue
-        if visited & (1 << i):      # 이미 방문한 도시라면 skip
-            continue
-
-        # 점화식 부분(위 설명 참고)
-        dp[x][visited] = min(dp[x][visited], dfs(i, visited | (1 << i)) + graph[x][i])
-    return dp[x][visited]
-
-
+N = int(input())
 graph = []
-for i in range(n):
-    graph.append(list(map(int, input().split())))
+for _ in range(N):
+    graph.append(tuple(map(int, input().split(' '))))
 
-print(dfs(0, 1))
+dp = [[-1]*(1<<N) for _ in range(N)]
+
+def dfs(x, visit):
+    if dp[x][visit] != -1:
+        return dp[x][visit]
+
+    if visit == (1<<N)-1:
+        if graph[x][0]:
+            return graph[x][0]
+        else:
+            return sys.maxsize
+
+    min_cost = sys.maxsize
+    for i in range(1, N):
+        if graph[x][i] == 0:
+            continue
+        if visit & (1<<i):
+            continue
+        tmp = dfs(i, visit|(1<<i))+ graph[x][i]
+        if tmp < min_cost:
+            min_cost = tmp
+    dp[x][visit] = min_cost
+    return min_cost
+
+print(f'{dfs(0, 1)}')
