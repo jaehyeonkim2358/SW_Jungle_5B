@@ -30,8 +30,32 @@ def go(i, included):
     
     return dp[i][included]
 
-go(0, (1<<(n-1))-1)
-print(dp[0][(1<<(n-1))-1])
+# go(0, (1<<(n-1))-1)
+# print(dp[0][(1<<(n-1))-1])
+
+# dp테이블 대신 캐시 데코레이터 활용.
+# import functools
+# n = int(input())
+# w = [] 
+# for _ in range(n):
+#     w.append(list(map(int, sys.stdin.readline().split())))
+
+# @functools.lru_cache(maxsize = sys.maxsize)
+# def go(i, included):  
+#     if not included and w[i][0]:     # v_i, {}
+#         return w[i][0]
+    
+#     min_ = sys.maxsize
+#     for j in range(1,n):
+#         if included & (1<<(j-1)) and w[i][j]:
+#             length = w[i][j] + go(j, included - (1<<(j-1)))
+#             if length < min_ : min_ = length
+            
+#     return min_
+
+
+# print(go(0, (1<<(n-1))-1))
+# print(go.cache_info())
 
 # visited만 비트마스킹을 사용한 완전탐색. dp테이블을 전혀 참조하지 않는다. 삽질.
 # def go(n, i, visited):
