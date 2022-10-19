@@ -1,0 +1,22 @@
+from sys import stdin
+
+stdin = open("input.txt","r")
+input=stdin.readline
+
+n,k=map(int,input().split())
+
+stuff=[[0,0]]
+
+for _ in range(n):
+    stuff.append(list(map(int,input().split())))
+   
+dp=[0]*(k+1)
+
+for i in range(n+1):
+    tmp_w=stuff[i][0]
+    tmp_v=stuff[i][1]
+    for j in range(k,-1,-1):
+        if tmp_w<=j:
+            dp[j]=max(dp[j],tmp_v+dp[j-tmp_w])
+            
+print(dp[k])
