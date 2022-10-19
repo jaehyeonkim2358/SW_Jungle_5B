@@ -1,5 +1,6 @@
 # https://www.acmicpc.net/problem/1700
-
+# 최적의 상황을 가정한 (500원자리 세개면 될 것 같은데?) 그게 안되면
+# 다음에 그거와 가장 가까운 상태를 선택해야한다면 그리디한 상황 
 
 N, K = map(int, input().split())
 scheduling = list(map(int,input().split()))
